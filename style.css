@@ -1,1 +1,157 @@
 /* Add your CSS here */
+
+/* Example beginner-friendly CSS */
+/* filepath: /workspaces/02-prj-intel-sustainability/style.css */
+
+/* Set a very light blue background for the whole page */
+body {
+  background-color: #ecf5fc; /* Very light blue, lighter than header */
+  font-family: Arial, sans-serif;
+  color: #151515; /* Dark gray for text */
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the header content and add space around it */
+header div {
+  text-align: center;    /* Center everything inside the header */
+  padding: 32px 16px 24px 16px; /* Top, right, bottom, left padding */
+  background-color: #c9e9ff; /* Icier blue for the header */
+  border-radius: 0 0 16px 16px; /* Rounded bottom corners */
+  box-shadow: 0 2px 8px rgba(0,113,197,0.08); /* Soft shadow under header */
+}
+
+/* Style the Intel logo */
+header img {
+  width: 140px;        /* Make the logo bigger */
+  height: auto;        /* Keep logo shape */
+  margin-bottom: 16px; /* Space below the logo */
+}
+
+/* Style the main headline */
+h1 {
+  color: #0071C5;        /* Intel blue */
+  font-size: 2.2em;      /* Make headline bigger */
+  margin: 0 0 12px 0;    /* Space below headline */
+  font-weight: bold;     /* Make headline bold */
+  letter-spacing: 1px;   /* Add a little space between letters */
+}
+
+/* Style the subheading/description */
+header p {
+  color: #222;           /* Dark text for contrast */
+  font-size: 1.1em;      /* Slightly larger text */
+  margin: 0 auto;        /* Center the paragraph */
+  max-width: 500px;      /* Keep it from getting too wide */
+  line-height: 1.5;      /* More space between lines */
+}
+
+/* Timeline section using Flexbox for horizontal scroll on large screens */
+section {
+  display: flex;              /* Use Flexbox to arrange cards in a row */
+  flex-direction: row;        /* Row direction for large screens */
+  overflow-x: auto;           /* Allows horizontal scrolling if needed */
+  gap: 12px;                  /* Space between cards */
+  padding: 20px;
+  max-width: 100%;
+  white-space: normal;        /* Allow wrapping if needed */
+  box-sizing: border-box;
+}
+
+/* Style each timeline card to match Intel's aesthetic */
+section > div {
+  flex: 0 0 300px;                /* Fixed width for each card */
+  background-color: #ffffff;      /* White background for clean look */
+  border: 2px solid #0071C5;      /* Intel blue border */
+  border-radius: 8px;             /* Rounded corners */
+  padding: 20px;                  /* Space inside the card */
+  margin-bottom: 0;               /* No extra margin at bottom (handled by gap) */
+  box-sizing: border-box;         /* Include padding and border in width */
+  transition: box-shadow 0.3s, transform 0.3s;    /* Smooth shadow and scale */
+  vertical-align: top;            /* Align cards to the top */
+  font-family: Arial, sans-serif; /* Consistent font */
+  color: #222;                    /* Dark text for readability */
+}
+
+/* Add a more noticeable blue shadow on hover */
+section > div:hover {
+  box-shadow: 0 12px 32px rgba(1, 74, 163, 0.40); /* Even bigger, darker shadow */
+  transform: scale(1.03) translateY(-6px); /* Move up and slightly scale */
+}
+
+/* Style card headings for consistency */
+h2 {
+  color: #0071C5;         /* Intel blue for year */
+  font-size: 1.4em;       /* Slightly larger */
+  margin: 0 0 4px 0;      /* Space below year */
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+h3 {
+  color: #005489;         /* Darker Intel blue for milestone */
+  font-size: 1.1em;
+  margin: 0 0 10px 0;     /* Space below milestone */
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+}
+
+/* Style the card caption/description */
+section > div p {
+  color: #222;            /* Dark text for contrast */
+  font-size: 1em;         /* Normal size */
+  margin: 0;              /* Remove default margin */
+  line-height: 1.5;       /* More space between lines */
+}
+
+/* Make all images in the timeline cards centered */
+section img {
+  display: block;        /* Makes the image take up the full line */
+  margin-left: auto;     /* Auto margin on the left */
+  margin-right: auto;    /* Auto margin on the right */
+  width: 100%;           /* Image fills the card width */
+  height: 210px;         /* All images have the same height */
+  object-fit: cover;     /* Keeps images from stretching */
+  border-radius: 4px;    /* Rounded corners */
+  margin-bottom: 8px;    /* Space below the image */
+}
+
+/* Add this CSS for hidden details inside each card */
+.card-details {
+  display: none;              /* Hide details by default */
+  margin-top: 10px;           /* Space above details */
+  color: #005489;             /* Intel dark blue for details */
+  font-size: 0.98em;          /* Slightly smaller text */
+  background: #f0f8ff;        /* Very light blue background */
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* Show details when hovering over the card */
+section > div:hover .card-details {
+  display: block;             /* Show details on hover */
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column;   /* Stack cards vertically */
+    gap: 0;                   /* Remove horizontal gap */
+    padding: 10px;
+    overflow-x: visible;      /* No horizontal scroll */
+  }
+  section > div {
+    width: 100%;              /* Full width for each card */
+    margin-bottom: 20px;      /* Space below each card */
+  }
+}
+
+/* Example timeline card */
+<div>
+  <h2>Year</h2>
+  <h3>Milestone</h3>
+  <img src="img/example.jpg" alt="Description" />
+  <p>
+    This is the caption. It should be inside the same div as the image and headings.
+  </p>
+</div>
